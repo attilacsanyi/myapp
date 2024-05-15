@@ -19,4 +19,8 @@ export class AppComponent {
     // @ts-ignore
     // myUndefinedFunction();
   }
+
+  throwError() {
+    throw new Error('This is an intentional error!');
+  }
 }
