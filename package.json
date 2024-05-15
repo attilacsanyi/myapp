@@ -5,7 +5,9 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "build:prod": "nx build --base-href=/myapp/ && pnpm sentry:sourcemaps",
+    "build:prod-": "nx build --base-href=/myapp/ && pnpm sentry:sourcemaps",
+    "build:prod": "nx run myapp:finish-when-ready",
+    "build:prod:watch": "nx build --base-href=/myapp/ --watch",
     "test": "nx test",
     "ci": "nx affected -t lint test build",
     "sentry:sourcemaps": "sentry-cli sourcemaps inject --org ac-k0 --project javascript-angular ./dist && sentry-cli sourcemaps upload --org ac-k0 --project javascript-angular ./dist"
@@ -23,6 +25,7 @@
     "@nx/angular": "19.0.3",
     "@sentry/angular": "8.0.0",
     "@sentry/cli": "2.31.2",
+    "@sentry/esbuild-plugin": "2.16.1",
     "rxjs": "7.8.0",
     "tslib": "2.3.0",
     "zone.js": "0.14.3"

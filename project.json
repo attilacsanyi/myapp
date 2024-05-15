@@ -7,18 +7,26 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
+      "executor": "@nx/angular:browser-esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "plugins": ["esbuild-plugin-sentry"],
         "outputPath": "dist/myapp",
         "index": "./src/index.html",
-        "browser": "./src/main.ts",
+        "main": "./src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "./tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["./src/favicon.ico", "./src/assets"],
         "styles": ["./src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "sourceMap": {
+          "scripts": true,
+          "styles": false,
+          "hidden": true,
+          "vendor": true
+        },
+        "verbose": true
       },
       "configurations": {
         "production": {
@@ -34,24 +42,17 @@
               "maximumError": "4kb"
             }
           ],
-          "outputHashing": "all",
-          "sourceMap": {
-            "scripts": true,
-            "styles": false,
-            "hidden": true,
-            "vendor": true
-          }
+          "outputHashing": "all"
         },
         "development": {
           "optimization": false,
-          "extractLicenses": false,
-          "sourceMap": true
+          "extractLicenses": false
         }
       },
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nx/angular:dev-server",
       "options": {
         "port": 5200
       },
@@ -82,6 +83,13 @@
       "outputs": ["{workspaceRoot}/coverage/{projectName}"],
       "options": {
         "jestConfig": "jest.config.ts"
+      }
+    },
+    "finish-when-ready": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["pnpm run build:prod:watch"],
+        "readyWhen": "No output file changes."
       }
     }
   }
