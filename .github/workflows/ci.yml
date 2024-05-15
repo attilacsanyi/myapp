@@ -42,6 +42,8 @@ jobs:
       #   run: pnpm run ci
 
       - name: Run Production Build
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
         run: pnpm run build:prod
 
       - name: Deploy to GitHub Pages
