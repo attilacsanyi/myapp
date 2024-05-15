@@ -4,10 +4,10 @@ const authToken = process.env.SENTRY_AUTH_TOKEN;
 
 module.exports = sentryEsbuildPlugin({
   debug: true,
-  sourcemaps: {
-    // assets: ['**/*.map'],
-    filesToDeleteAfterUpload: ['dist/**/*.map'],
-  },
+  // sourcemaps: {
+  //   // assets: ['**/*.map'],
+  //   filesToDeleteAfterUpload: ['dist/**/*.map'],
+  // },
   org: 'ac-k0',
   project: 'javascript-angular',
   authToken,
