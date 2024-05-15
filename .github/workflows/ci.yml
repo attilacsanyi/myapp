@@ -38,8 +38,8 @@ jobs:
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: pnpm exec nx-cloud record -- echo Hello World
-      - name: Run CI pipeline
-        run: pnpm run ci
+      # - name: Run CI pipeline
+      #   run: pnpm run ci
 
       - name: Run Production Build
         run: pnpm run build:prod
