@@ -23,7 +23,8 @@ export class AppComponent {
   }
 
   throwError() {
-    console.error(`This is an intentional error!: ${this.errorDetail}`);
-    // throw new Error('This is an intentional error!'); // This is not report to Sentry
+    const errorMessage = `This is an intentional error!: ${this.errorDetail}`;
+    console.error(errorMessage);
+    throw new Error(errorMessage);
   }
 }
