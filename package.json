@@ -5,7 +5,9 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "build:prod": "nx build --base-href=/myapp/",
+    "test": "nx test",
+    "ci": "nx affected -t lint test build"
   },
   "private": true,
   "dependencies": {
