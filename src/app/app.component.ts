@@ -11,4 +11,10 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 })
 export class AppComponent {
   title = 'myapp';
+
+  constructor() {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    // myUndefinedFunction();
+  }
 }

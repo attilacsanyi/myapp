@@ -5,9 +5,10 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "build:prod": "nx build --base-href=/myapp/",
+    "build:prod": "nx build --base-href=/myapp/ && pnpm sentry:sourcemaps",
     "test": "nx test",
-    "ci": "nx affected -t lint test build"
+    "ci": "nx affected -t lint test build",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org ac-k0 --project javascript-angular ./dist && sentry-cli sourcemaps upload --org ac-k0 --project javascript-angular ./dist"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,8 @@
     "@angular/platform-browser-dynamic": "17.3.0",
     "@angular/router": "17.3.0",
     "@nx/angular": "19.0.3",
+    "@sentry/angular": "8.0.0",
+    "@sentry/cli": "2.31.2",
     "rxjs": "7.8.0",
     "tslib": "2.3.0",
     "zone.js": "0.14.3"
