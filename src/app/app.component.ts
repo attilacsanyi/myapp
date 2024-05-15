@@ -21,6 +21,7 @@ export class AppComponent {
   }
 
   throwError() {
-    throw new Error('This is an intentional error!');
+    console.error('This is an intentional console error!');
+    throw new Error('This is an intentional error!'); // This is not report to Sentry
   }
 }
