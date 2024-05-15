@@ -42,11 +42,10 @@ jobs:
         run: pnpm run ci
 
       - name: Run Production Build
-        working-directory: my-app
         run: pnpm run build:prod
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: my-app/dist/myapp/browser
+          folder: dist/myapp/browser
           token: ${{ secrets.GH_TOKEN }}
