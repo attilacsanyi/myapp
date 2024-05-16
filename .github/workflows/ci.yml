@@ -50,6 +50,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/myapp/browser
+          folder: dist/myapp
           clean: true
           token: ${{ secrets.GH_TOKEN }}
