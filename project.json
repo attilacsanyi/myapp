@@ -7,13 +7,13 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/angular:browser-esbuild",
+      "executor": "@nx/angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
         "plugins": ["esbuild-plugin-sentry"],
         "outputPath": "dist/myapp",
         "index": "./src/index.html",
-        "main": "./src/main.ts",
+        "browser": "./src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "./tsconfig.app.json",
         "inlineStyleLanguage": "scss",
