@@ -26,9 +26,9 @@
     "@angular/platform-browser-dynamic": "18.0.0",
     "@angular/router": "18.0.0",
     "@nx/angular": "19.1.0",
-    "@sentry/angular": "8.2.1",
+    "@sentry/angular": "8.4.0",
     "@sentry/cli": "2.31.2",
-    "@sentry/esbuild-plugin": "2.16.1",
+    "@sentry/esbuild-plugin": "2.17.0",
     "rxjs": "7.8.0",
     "tslib": "2.3.0",
     "zone.js": "0.14.3"
