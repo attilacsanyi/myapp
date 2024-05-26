@@ -88,7 +88,7 @@
     "finish-when-ready": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["pnpm run build:prod:watch"],
+        "command": "pnpm run build:prod:watch",
         "readyWhen": "No output file changes."
       }
     }
