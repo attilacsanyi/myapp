@@ -12,6 +12,7 @@
     "build:prod": "nx run myapp:finish-when-ready",
     "build:prod:watch": "nx build --base-href=/myapp/ --watch",
     "test": "nx test",
+    "http": "http-server -a localhost dist/myapp -b -p 8201 -o",
     "ci": "nx affected -t lint test build",
     "sentry:sourcemaps": "sentry-cli sourcemaps inject --org ac-k0 --project javascript-angular ./dist && sentry-cli sourcemaps upload --org ac-k0 --project javascript-angular ./dist"
   },
@@ -58,6 +59,7 @@
     "@typescript-eslint/parser": "7.3.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.0.0",
+    "http-server": "14.1.1",
     "jest": "29.4.1",
     "jest-environment-jsdom": "29.4.1",
     "jest-preset-angular": "14.1.0",
