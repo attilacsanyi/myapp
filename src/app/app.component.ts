@@ -24,6 +24,12 @@ export class AppComponent {
 
   throwError() {
     const errorMessage = `This is an intentional error!: ${this.errorDetail}`;
+
+    const v = 5;
+    let _a = 2 * v;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    _a = _a + 1;
+
     console.error(errorMessage);
     throw new Error(errorMessage);
   }
